@@ -21,27 +21,21 @@ function readOneNumber($number){
     $arr=['zero','one','two','three','four','five','six','seven','eight','nine'];
     return  $arr[$number];
 }
-function readTwoNumber($number){
-    $arr1=[10=>'ten',11=>'eleven',12=>'twelve',13=>'thirteen',14=>'fourteen',15=>'fifteen'];
-    $arr2=[2=>'twenty',3=>'thirty',4=>'forty',5=>'fifty',6=>'sixty',7=>'seventy',8=>'eighty',9=>'ninety'];
-    if($number<10){
+function readTwoNumber($number)
+{
+    $arr1 = [10 => 'ten', 11 => 'eleven', 12 => 'twelve', 13 => 'thirteen', 14 => 'fourteen', 15 => 'fifteen'];
+    $arr2 = [2 => 'twenty', 3 => 'thirty', 4 => 'forty', 5 => 'fifty', 6 => 'sixty', 7 => 'seventy', 8 => 'eighty', 9 => 'ninety'];
+    if ($number < 10) {
         return readOneNumber($number);
-    }elseif ($number>9 && $number<16){
+    } elseif ($number > 9 && $number < 16) {
         return $arr1[$number];
-    }elseif ($number<20){
-        return readOneNumber($number[1]).'teen';
-    }elseif ( $number<100){
-        if($number%10==0){
+    } elseif ($number < 20) {
+        return readOneNumber($number[1]) . 'teen';
+    } elseif ($number < 100) {
+        if ($number % 10 == 0) {
             return $arr2[$number[0]];
-        }else{
-            return $arr2[$number[0]].' '.readOneNumber($number[1]);
-        }
-    }elseif ($number<1000){
-        if($number%100==0){
-            return readOneNumber($number).'hundred';
-        }else{
-            if($number%10==0){
-            return readOneNumber($number[1]).'hu
+        } else {
+            return $arr2[$number[0]] . ' ' . readOneNumber($number[1]);
         }
     }
 }
